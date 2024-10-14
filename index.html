@@ -1,0 +1,160 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iTravel</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <p>iTravel</p>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div id="home" class="header-content">
+            <h1>San Francisco</h1>
+            <p>The world is a book and those who do not travel read only one page!</p>
+            <button>Book Now</button>
+        </div>
+    </header>
+    <section id="packages" class="packages">
+        <h1 class="packages-title">See more details about our promotional packages</h1>
+        <div class="packages-cards">
+            <div class="card">
+                <div class="card-tag card-tag-top">
+                    <p>Promotion</p>
+                </div>
+                <div class="card-tag card-tag-bottom">
+                    <p>$1500,00</p>
+                </div>
+                <img class="card-image" src="https://images.unsplash.com/photo-1542391120-de6f235e826a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fG1pYW1pfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="miami">
+                <div class="card-content">
+                    <h1>Miami Summer Package 4 days</h1>
+                    <ul>
+                        <li><i data-feather="coffee"></i>Breakfast</li>
+                        <li><i data-feather="wifi"></i>Wifi Free</li>
+                        <li><i data-feather="check-circle"></i>Pet friendly</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-tag card-tag-bottom">
+                    <p>$3500,00</p>
+                </div>
+                <img class="card-image" src="https://images.unsplash.com/photo-1540202404-a2f29016b523?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1490&q=80" alt="maldives">
+                <div class="card-content">
+                    <h1>Maldives Luxury Hotel 10 days</h1>
+                    <ul>
+                        <li><i data-feather="coffee"></i>Breakfast</li>
+                        <li><i data-feather="wifi"></i>Wifi Free</li>
+                        <li><i data-feather="check-circle"></i>Pet friendly</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-tag card-tag-top">
+                    <p>Promotion</p>
+                </div>
+                <div class="card-tag card-tag-bottom">
+                    <p>$2000,00</p>
+                </div>
+                <img class="card-image" src="https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="ny">
+                <div class="card-content">
+                    <h1>New York Premium Hotel 3 days</h1>
+                    <ul>
+                        <li><i data-feather="coffee"></i>Breakfast</li>
+                        <li><i data-feather="wifi"></i>Wifi Free</li>
+                        <li><i data-feather="check-circle"></i>Pet friendly</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h1 class="services-title">Services</h1>
+        <div class="services-cards">
+            <div class="card">
+                <i data-feather="map"></i>
+                <div class="card-content">
+                    <h3>Guided Tours</h3>
+                    <p>Guided tours are all generally all-inclusive group travel experiences led by a guide and following a specific itinerary.</p>
+                </div>
+                <button>Read More</button>
+            </div>
+
+            <div class="card">
+                <i data-feather="camera"></i>
+                <div class="card-content">
+                    <h3>Professional Photography</h3>
+                    <p>We provide a professional photographer to capture beautiful memories of your experience.</p>
+                </div>
+                <button>Read More</button>
+            </div>
+
+            <div class="card">
+                <i data-feather="navigation"></i>
+                <div class="card-content">
+                    <h3>Car Rent</h3>
+                    <p>iTravel provides the best prices and exclusive discounts.</p>
+                </div>
+                <button>Read More</button>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <div class="contact-card">
+            <h1>Contact iTravel Service</h1>
+            <ul>
+                <li><i data-feather="navigation"></i>7603 Brown Ave.Ephrata, PA 17522</li>
+                <li><i data-feather="navigation"></i>itravel@agency.com</li>
+                <li><i data-feather="navigation"></i>202-555-0110</li>
+            </ul>
+        </div>
+        <div id="map"></div>
+    </section>
+    <script>
+        feather.replace();
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        function initMap() {
+            // The location of Uluru
+            const uluru = {
+                lat: -25.344,
+                lng: 131.036
+            };
+            // The map, centered at Uluru
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 4,
+                center: uluru,
+            });
+            // The marker, positioned at Uluru
+            const marker = new google.maps.Marker({
+                position: uluru,
+                map: map,
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&libraries=&v=weekly" async>
+    </script>
+</body>
+
+</html>
